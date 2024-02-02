@@ -1,4 +1,5 @@
 from django.shortcuts import render
+# Import do django para chamar a página 404
 from django.shortcuts import get_object_or_404
 
 from django.http import HttpResponse
@@ -24,6 +25,7 @@ def contato(request):
 
 def produto(request, pk):
     # prod = Produto.objects.get(id=pk)
+    # Com esse comando é possível redirecionar o usuário para uma págia 404 caso o endereço URL esteja errado
     prod = get_object_or_404(Produto, id=pk)
 
     context = {
