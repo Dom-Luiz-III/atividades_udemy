@@ -1,11 +1,29 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% bootstrap_css %}
     <title>Contato</title>
 </head>
+
 <body>
-    
+    <div class="container bg-dark text-white mt-5 rounded" style="width: 400px;">
+        <h1>Contato</h1>
+        {% bootstrap_messages %}
+
+        <form action="{% url 'contato' %}" method="post" class="form" autocomplete="off">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary mb-3">Enviar Mensagem</button>
+            {% endbuttons %}
+        </form>
+    </div>
+
+    {% bootstrap_javascript jquery='full' %}
 </body>
+
 </html>
