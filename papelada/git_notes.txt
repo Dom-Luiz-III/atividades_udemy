@@ -1,0 +1,11 @@
+git init
+
+git status
+
+git add .
+
+git commit -m "mensagem de commit aqui"
+
+git push origin master
+
+git pull origin master

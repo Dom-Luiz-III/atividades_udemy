@@ -1,0 +1,31 @@
+pip freeze > requirements.txt
+
+django-admin startproject django1 .
+
+django-admin startapp core
+
+python manage.py runserver
+
+python manage.py createsuperuser
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py shell
+
+from core.models import Produto
+
+dir(Produto)
+
+dir(Produto.objects)
+
+produtos = Produto.objects.all()
+
+pip install django-adminlte2
+
+python manage.py collectstatic
+
+python manage.py sqlmigrate core 0005
+
+Produto.objects.filter(id=1).first
