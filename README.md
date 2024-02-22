@@ -2,7 +2,7 @@
 
 # Repositório com programas feito no intuito de aprendizado
 
-Esse espaço foi feito para compartilhar atividades e exercícios que fiz pela Udemy ou em outros sites menores, o repositório será separado por pastas contendo cada exercício feito pelos cursos que estou estudando.
+Este repositório foi criado com o propósito de compartilhar atividades e exercícios desenvolvidos durante meus estudos na Udemy e em outros sites de menor porte. O repositório está organizado em pastas, cada uma contendo os exercícios realizados nos cursos que estou estudando.
 
 ## Atividades feitas pelos seguintes cursos 📚
 
