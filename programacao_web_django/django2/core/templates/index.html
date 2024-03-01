@@ -1,3 +1,5 @@
+{% load bootstrap4 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,77 +7,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% bootstrap_css %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
 
 <body>
-    <center>
-        <h1>
-            Brasil (localmente [bɾaˈziw][b]), oficialmente República Federativa do Brasil (? escutar),[7] é o maior país
-            da América do Sul e da região da América Latina, sendo o quinto maior do mundo em área territorial
-            (equivalente a 47,3% do território sul-americano), com 8 510 417,771 km²,[1][8][9] e o sétimo em
-            população[10][11] (com 203 milhões de habitantes, em agosto de 2022).[12] É o único país na América onde se
-            fala majoritariamente a língua portuguesa e o maior país lusófono do planeta,[13] além de ser uma das nações
-            mais multiculturais e etnicamente diversas, em decorrência da forte imigração oriunda de variados locais do
-            mundo. Sua atual Constituição, promulgada em 1988, concebe o Brasil como uma república federativa
-            presidencialista,[7] formada pela união dos 26 estados, do Distrito Federal e dos 5 571
-            municípios.[7][14][nota 1]
+    <div class="container">
+        <h1>Produtos</h1>
 
-            Banhado pelo Oceano Atlântico, o Brasil tem um litoral de 7 491 km[13] e faz fronteira com todos os outros
-            países sul-americanos, exceto Chile e Equador, sendo limitado a norte pela Venezuela, Guiana, Suriname e
-            pelo departamento ultramarino francês da Guiana Francesa; a noroeste pela Colômbia; a oeste pela Bolívia e
-            Peru; a sudoeste pela Argentina e Paraguai e ao sul pelo Uruguai. Vários arquipélagos formam parte do
-            território brasileiro, como o Atol das Rocas, o Arquipélago de São Pedro e São Paulo, Fernando de Noronha (o
-            único destes habitado por civis) e Trindade e Martim Vaz.[13] O Brasil também é o lar de uma diversidade de
-            animais selvagens, ecossistemas e de vastos recursos naturais em uma grande variedade de habitats
-            protegidos.[13]
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <th scope="col">{{ produto.id }}</th>
+                    <th scope="col"><a href="#modal{{produto.id}}" data-toggle="modal"> {{ produto.nome }}</a></th>
+                    <th scope="col">{{ produto.preco }}</th>
+                    <th scope="col">{{ produto.estoque }}</th>
+                </tr>
+                <div class="modal fade bd-example-modal-lg show" id="modal{{produto.id}}" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="dynamic-content">
+                                <img src="{{ produto.imagem.url }}" class="img-fluid" alt="{{ produto.nome}}" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-            O território que atualmente forma o Brasil foi oficialmente descoberto pelos portugueses em 22 de abril de
-            1500, em expedição liderada por Pedro Álvares Cabral. Segundo alguns historiadores como Antonio de Herrera e
-            Pietro d'Anghiera, o encontro do território teria sido três meses antes, em 26 de janeiro, pelo navegador
-            espanhol Vicente Yáñez Pinzón, durante uma expedição sob seu comando. A região, então habitada por indígenas
-            ameríndios divididos entre milhares de grupos étnicos e linguísticos diferentes, cabia a Portugal pelo
-            Tratado de Tordesilhas, e tornou-se uma colônia do Império Português.[16] O vínculo colonial foi rompido, de
-            fato, quando em 1808 a capital do reino foi transferida de Lisboa para a cidade do Rio de Janeiro, depois de
-            tropas francesas comandadas por Napoleão Bonaparte invadirem o território português.[17] Em 1815, o Brasil
-            se torna parte de um reino unido com Portugal. Dom Pedro I, o primeiro imperador, proclamou a independência
-            política do país em 1822. Inicialmente independente como um império, período no qual foi uma monarquia
-            constitucional parlamentarista, o Brasil tornou-se uma república em 1889, em razão de um golpe militar
-            chefiado pelo marechal Deodoro da Fonseca (o primeiro presidente), embora uma legislatura bicameral, agora
-            chamada de Congresso Nacional, já existisse desde a ratificação da primeira Constituição, em 1824.[17] Desde
-            o início do período republicano, a governança democrática foi interrompida por longos períodos de regimes
-            autoritários, até um governo civil e eleito democraticamente assumir o poder em 1985, com o fim da ditadura
-            militar.[18]
-
-            Como potência regional e média,[19] a nação tem reconhecimento e influência internacional, sendo que também
-            é classificada como uma potência global emergente[20] e como uma potencial superpotência por vários
-            analistas.[21] O PIB nominal brasileiro é o nono maior do mundo[22] e o oitavo por paridade do poder de
-            compra (PPC), sendo, em ambos, o maior da América Latina e do Hemisfério Sul.[23] O país é um dos principais
-            celeiros do planeta, sendo o maior produtor de café dos últimos 150 anos,[24] além de ser classificado como
-            uma economia de renda média-alta pelo Banco Mundial[25] e como um país recentemente industrializado, que
-            detém a maior parcela de riqueza global da América do Sul. No entanto, o país ainda mantém níveis notáveis
-            de corrupção, criminalidade e desigualdade social. É membro fundador da Organização das Nações Unidas (ONU),
-            G20, BRICS, Comunidade dos Países de Língua Portuguesa (CPLP), União Latina, Organização dos Estados
-            Americanos (OEA), Organização dos Estados Ibero-americanos (OEI) e Mercado Comum do Sul (Mercosul).
-
-            Etimologia
-            Ver artigo principal: Etimologia de Brasil
-            As raízes etimológicas do termo "Brasil" são de difícil reconstrução. O filólogo Adelino José da Silva
-            Azevedo postulou que se trata de uma palavra de procedência celta (uma lenda que fala de uma "terra de
-            delícias", vista entre nuvens), mas advertiu também que as origens mais remotas do termo poderiam ser
-            encontradas na língua dos antigos fenícios. Na época colonial, cronistas da importância de João de Barros,
-            frei Vicente do Salvador e Pero de Magalhães Gândavo apresentaram explicações concordantes acerca da origem
-            do nome "Brasil". De acordo com eles, o nome "Brasil" é derivado de "pau-brasil", designação dada a um tipo
-            de madeira empregada na tinturaria de tecidos. Na época dos descobrimentos, era comum aos exploradores
-            guardar cuidadosamente o segredo de tudo quanto achavam ou conquistavam, a fim de explorá-lo vantajosamente,
-            mas não tardou em se espalhar na Europa que haviam descoberto certa "ilha Brasil" no meio do oceano
-            Atlântico, de onde extraíam o pau-brasil (madeira cor de brasa).[26] Antes de ficar com a designação atual,
-            "Brasil", as novas terras descobertas foram designadas de: Monte Pascoal (quando os portugueses avistaram
-            terras pela primeira vez), Ilha de Vera Cruz, Terra de Santa Cruz, Nova Lusitânia, Cabrália, Império do
-            Brasil e Estados Unidos do Brasil.[27] Os habitantes naturais do Brasil são denominados brasileiros, cujo
-            gentílico é registrado em português a partir de 1706[28] e referia-se inicialmente apenas aos que
-            comercializavam pau-brasil.[29]
-        </h1>
-    </center>
+    {% bootstrap_javascript jquery='full' %}
 </body>
 
 </html>
