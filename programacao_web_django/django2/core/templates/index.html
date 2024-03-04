@@ -13,6 +13,7 @@
 
 <body>
     <div class="container">
+        {% if produtos %}
         <h1>Produtos</h1>
 
         <table class="table table-hover">
@@ -49,6 +50,11 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% else %}
+        <center>
+            <h2>Ainda não existe produtos cadastrados!  😔</h2>
+        </center>
+        {% endif %}
     </div>
 
     {% bootstrap_javascript jquery='full' %}
