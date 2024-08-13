@@ -7,3 +7,4 @@ Este repositório foi criado com o propósito de compartilhar atividades e exerc
 ## Atividades feitas pelos seguintes cursos 📚
 
 - Programação Web com Python e Django Framework: Essencial
+- Java Completo: Programação Orientada a Objetos + Projetos
