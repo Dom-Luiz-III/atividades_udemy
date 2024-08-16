@@ -19,5 +19,6 @@ public class atv_1 {
 		System.out.println("Valor de A: " + a);
 		System.out.println("Valor de B: " + b);
 		System.out.println("Soma dos dois: " + c);
+		sc.close();
 	}
 }
