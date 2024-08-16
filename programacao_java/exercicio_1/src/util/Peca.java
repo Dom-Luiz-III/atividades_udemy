@@ -4,7 +4,6 @@ public class Peca {
 	private int peca_id;
 	private int peca_qtd;
 	private double peca_valor;
-	private double peca_soma;
 
 	public Peca(int peca_id, int peca_qtd, double peca_valor) {
 		this.peca_id = peca_id;
@@ -27,7 +26,7 @@ public class Peca {
 	public void setPeca_qtd(int peca_qtd) {
 		this.peca_qtd = peca_qtd;
 	}
-	
+
 	public double getPeca_valor() {
 		return peca_valor;
 	}
